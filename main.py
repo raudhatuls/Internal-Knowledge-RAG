@@ -11,11 +11,16 @@ EMBED_MODEL = "text-embedding-3-small"
 ANSWER_MODEL = "gpt-6-luna"
 STORE = "knowledge.json"
 SYSTEM_PROMPT = f"""
-        Jawab pertanyaan dengan ramah dan profesional
-        Jawab pertanyaan sesuai dengan potongan knowledge yang dikasih
-        Jika tidak ada jawaban jawab tidak tahu jangan mengarang informasi apapun
-        Jika jawaban bisa lebih dari satu klarifikasi dan
-        jelaskan dua aturan berbeda secara terpisah, dan sebutkan nama dokumen di akhir jawaban 
+        Jawab pertanyaan dengan ramah dan profesional.
+        Jika tidak ada jawaban jawab tidak tahu secara profesional.
+        Jangan mengarang informasi apapun.
+        Jika ada singkatan yang umum digunakan, lihat kecocokan di chunk.
+        Jika jawaban bisa lebih dari satu minta klarifikasi ke pengguna aturan mana yang dimaksud sebelum memberikan jawaban.
+        Kelaskan dua aturan berbeda secara terpisah.
+        Jika pertanyaan menyebut hal yang tidak secara eksplisit ada di potongan, jangan menyimpulkan dari data terkait. Katakan tidak ada, lalu sebutkan informasi terdekat yang tersedia, misalnya jam kerja reguler.
+        Sebutkan nama dokumen sumber diakhir, namun jika jawaban tidak ada jangan menyebutkan sumber dokumen
+        Salin angka, jam, menit dan batas waktu lain persis seperti di potongan. Jangan membulatkan atau memotong.
+        Jika jawaban ada di salah satu potongan, jawab langsung. Jangan katakan tidak disebutkan.
         """
         
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
@@ -26,7 +31,7 @@ STEP = re.compile(r"^(\d+)\.\s+(.*)$")
 def answer(records, question, n):
     model_input = "Pertanyaan : "+question+"\n"
     for score, r in query(records, question, n=n):
-        model_input=model_input+(f"{score:.3f}  {r['text'][:200]}")+"\n"
+        model_input=model_input+(f"{score:.3f}  {r['text']}")+"\n"
     response = client.responses.create(
                         model=ANSWER_MODEL,
                         instructions=SYSTEM_PROMPT,
@@ -137,13 +142,14 @@ if __name__ == "__main__":
     records = load_store()
     # print_chunks()
     for pertanyaan in [
-        "jam kerja jam berapa?",
-        "jam cut-off pengiriman jam berapa?",
-        "kalau barang rusak, ongkir retur siapa yang bayar?",
-        "nomor hr berapa?",
+        "cuti tahunan saya berapa hari?",
+        "saya baru masuk, bisa cuti tidak?",
+        "sisa cuti tahun lalu bisa dipakai?",
+        "cuti 2 hari, ajukan kapan?",
+        "jam masuk hari pertama jam berapa?"
     ]:
     # answer(records, "jam kerja jam ber/apa?")
         print(f"\n=== {pertanyaan}")
-        print(answer(records, pertanyaan, n=5))
-        for score, r in query(records, pertanyaan, n=5):
-            print(f"{score:.3f}  {r['text'][:200]}")
+        print(answer(records, pertanyaan, n=8))
+        for score, r in query(records, pertanyaan, n=8):
+            print(f"{score:.3f}  {r['text']}")
