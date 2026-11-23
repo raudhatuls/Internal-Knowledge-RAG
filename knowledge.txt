@@ -1,0 +1,98 @@
+PT NUSANTARA GAYA KREATIF (NUSAwear)
+DOKUMEN 1: SOP ONBOARDING KARYAWAN BARU
+Kode Dokumen: HR-SOP-001   |   Efektif: 1 Januari 2026   |   Departemen: Human Resources
+1. Jam Kerja & Kehadiran
+Jam Kerja Reguler (HQ & Admin): Senin – Jumat, pukul 09.00 – 18.00 WIB (termasuk waktu istirahat pukul 12.00 – 13.00 WIB).
+Jam Kerja Operasional Gudang & Toko: Sistem shift (Shift 1: 08.00 – 17.00 WIB; Shift 2: 13.00 – 22.00 WIB).
+Toleransi Keterlambatan: Maksimal 15 menit (hingga pukul 09.15 WIB) dengan wajib mengganti jam pulang di hari yang sama. Keterlambatan di atas 3 kali dalam sebulan akan memengaruhi penilaian KPI kedisiplinan.
+2. Prosedur Absensi (Check-in & Check-out)
+Seluruh karyawan wajib melakukan absensi mandiri melalui aplikasi Talenta HRIS di ponsel masing-masing.
+Karyawan WFO (Kantor/Gudang): Wajib menyalakan GPS dan terhubung ke jaringan Wi-Fi kantor (NUSA-Corp-5G) saat menekan tombol Clock-In dan Clock-Out.
+Karyawan WFH / Dinas Luar: Wajib menyertakan foto selfie di lokasi kerja dan mengisi catatan rencana kerja harian pada kolom Notes saat Clock-In.
+3. Akun Email & Aktivasi Tools Hari Pertama
+Pada hari pertama bergabung, tim IT akan mengirimkan kredensial sementara ke email pribadi karyawan pukul 08.30 WIB. Karyawan wajib mengganti kata sandi dalam waktu 24 jam.
+Akun Email & Aktivasi Tools Hari Pertama - Kategori Email & Drive: Nama Tools / Platform: Google Workspace; Format Akun / Akses: nama.depan@nusawear.co.id; Fungsi Utama: Email resmi, Google Drive, Calendar, Meet.
+Akun Email & Aktivasi Tools Hari Pertama - Kategori Komunikasi Internal: Nama Tools / Platform: Slack; Format Akun / Akses: SSO Google Workspace; Fungsi Utama: Koordinasi harian antar divisi (wajib masuk channel #general & #announcements).
+Akun Email & Aktivasi Tools Hari Pertama - Kategori Manajemen Tugas: Nama Tools / Platform: Notion & Linear; Format Akun / Akses: Undangan via email kantor; Fungsi Utama: Dokumentasi SOP, wiki tim, dan pelacakan proyek.
+Akun Email & Aktivasi Tools Hari Pertama - Kategori HR & Absensi: Nama Tools / Platform: Talenta HRIS; Format Akun / Akses: NIK Karyawan & Email Kantor; Fungsi Utama: Absensi harian, pengajuan cuti, klaim reimbursement, slip gaji.
+Akun Email & Aktivasi Tools Hari Pertama - Kategori CRM & Ticketing: Nama Tools / Platform: Zendesk (Khusus CS/Ops); Format Akun / Akses: Email kantor (akses diberikan oleh Lead); Fungsi Utama: Penanganan keluhan pelanggan dan tiket retur.
+4. Kontak Resmi Departemen Human Resources (HR)
+Email HR Umum: hr@nusawear.co.id
+Email IT Helpdesk (Aktivasi Akun & Tools): it.support@nusawear.co.id
+WhatsApp HR Hotline (Izin Sakit & Kendala Mendesak): 0811-2233-4455 (Jam operasional: Senin–Jumat, 08.30 – 18.00 WIB)
+Kanal Slack Internal: #ask-hr atau Direct Message ke Rina Maharani (HR People Partner)
+Lokasi Meja HR (HQ): Lantai 2, Sayap Kiri – Ruang People & Culture
+PT NUSANTARA GAYA KREATIF (NUSAwear)
+DOKUMEN 2: KEBIJAKAN CUTI & IZIN KARYAWAN
+Kode Dokumen: HR-POL-004   |   Efektif: 1 Januari 2026   |   Departemen: Human Resources
+1. Jatah Cuti Tahunan (Annual Leave)
+Karyawan tetap berhak mendapatkan 12 hari cuti tahunan setelah melewati masa percobaan (probation) selama 3 bulan.
+Selama masa probation, karyawan belum memiliki jatah cuti tahunan berbayar (kecuali cuti sakit dengan surat dokter atau izin kedukaan keluarga inti).
+2. Prosedur Pengajuan Cuti
+1. Karyawan wajib berkoordinasi terlebih dahulu dengan atasan langsung (Direct Manager) untuk memastikan handover pekerjaan.
+2. Pengajuan dilakukan melalui aplikasi Talenta HRIS dengan ketentuan waktu minimal:
+Cuti 1–2 hari: Diajukan minimal H-3 sebelum tanggal cuti.
+Cuti lebih dari 3 hari berturut-turut: Diajukan minimal H-7 sebelum tanggal cuti.
+3. Cuti dianggap sah hanya setelah status di aplikasi berubah menjadi Approved oleh Atasan Langsung dan HR.
+3. Kebijakan Cuti Sakit (Sick Leave)
+Sakit 1 Hari: Karyawan wajib menginformasikan kepada atasan langsung dan HR melalui Slack/WhatsApp maksimal pukul 09.30 WIB pada hari tersebut. Tidak wajib melampirkan surat dokter.
+Sakit 2 Hari atau Lebih: Wajib melampirkan Surat Keterangan Dokter yang sah (fisik atau telemedisin resmi seperti Halodoc/Alodokter) yang diunggah ke Talenta HRIS paling lambat 1 hari setelah kembali bekerja. Jika tidak ada surat dokter, hari kedua dan seterusnya akan dipotong dari jatah cuti tahunan.
+4. Kebijakan Pemindahan Sisa Cuti (Carry Over)
+Sisa cuti tahunan pada akhir tahun kalender (31 Desember) dapat dipindahkan ke tahun berikutnya maksimal sebanyak 4 hari.
+Sisa cuti di atas 4 hari akan otomatis hangus dan tidak dapat diuangkan.
+Cuti carry over tersebut wajib digunakan paling lambat tanggal 31 Maret di tahun berikutnya.
+PT NUSANTARA GAYA KREATIF (NUSAwear)
+DOKUMEN 3: SOP OPERASIONAL TOKO & E-COMMERCE
+Kode Dokumen: OPS-SOP-012   |   Efektif: 1 Februari 2026   |   Departemen: Operations & Fulfillment
+1. Alur Pemrosesan Pesanan (Order Fulfillment)
+1. Sinkronisasi Pesanan: Tim Admin Gudang menarik data pesanan masuk dari sistem Omnichannel (Shopee, Tokopedia, TikTok Shop, Website) setiap pukul 09.00, 12.00, dan 15.00 WIB.
+2. Picking & Quality Control (QC): Staf gudang mengambil barang sesuai Picking List, lalu memeriksa kelengkapan tag harga, jahitan, dan noda sebelum dikemas.
+3. Packing: Barang dimasukkan ke dalam polymailer ramah lingkungan beserta kartu ucapan terima kasih (Thank You Card). Label pengiriman ditempel rata di bagian depan paket.
+4. Serah Terima Kurir (Handover): Paket dikelompokkan berdasarkan ekspedisi (JNE, J&T, SiCepat, Instant) dan wajib dipindai (scan barcode) bersama kurir saat penjemputan.
+2. Batas Waktu Pengiriman (Cut-Off Time)
+Pesanan Reguler & Kargo: Pesanan yang terkonfirmasi lunas sebelum pukul 15.00 WIB wajib dikirim pada hari yang sama. Pesanan setelah pukul 15.00 WIB akan diproses pada hari kerja berikutnya.
+Pesanan Instant / Same-Day: Pesanan masuk sebelum pukul 14.00 WIB (Same-Day) dan pukul 16.30 WIB (Instant) diproses pada hari yang sama.
+Operasional Akhir Pekan: Pengiriman tetap berjalan pada hari Sabtu (batas cut-off pukul 12.00 WIB). Hari Minggu dan tanggal merah nasional gudang libur pengiriman.
+3. Prosedur Retur & Penukaran Barang
+Pelanggan dapat mengajukan retur atau tukar ukuran dalam waktu maksimal 7 hari kalender sejak status paket diterima (Delivered).
+Syarat Sah Retur:
+1. Wajib menyertakan video unboxing tanpa jeda (uncut) dari awal paket masih tersegel.
+2. Produk belum pernah dicuci, tidak berbau parfum/keringat, dan hangtag merek masih terpasang utuh.
+Alur Penanganan oleh Tim CS:
+1. Pelanggan menghubungi CS melalui WhatsApp resmi atau fitur chat marketplace dengan melampirkan nomor pesanan dan video unboxing.
+2. CS memverifikasi kelayakan dalam waktu maksimal 1x24 jam dan membuat tiket retur di Zendesk.
+3. Kesalahan Penjual (Cacat produksi / salah kirim ukuran atau warna): Ongkos kirim pulang-pergi ditanggung 100% oleh perusahaan.
+4. Permintaan Pembeli (Tukar ukuran karena salah pilih): Ongkos kirim pulang-pergi ditanggung sepenuhnya oleh pembeli, dan penukaran hanya berlaku jika stok pengganti tersedia.
+PT NUSANTARA GAYA KREATIF (NUSAwear)
+DOKUMEN 4: PANDUAN PRODUK & KEBIJAKAN GARANSI (KATALOG 2026)
+Kode Dokumen: PRD-CAT-2026   |   Efektif: 1 Januari 2026   |   Departemen: Product & Merchandising
+1. Daftar Produk Utama & Spesifikasi
+Daftar Produk Utama & Spesifikasi - Kode SKU NW-TS01: Nama Produk: Nusantara Essential Heavyweight Tee; Bahan Utama: 100% Cotton Combed 20s (235 gsm); Pilihan Warna: Hitam, Putih Tulang, Sage Green, Navy; Harga Retail: Rp149.000.
+Daftar Produk Utama & Spesifikasi - Kode SKU NW-SH02: Nama Produk: Linen Relaxed Daily Shirt; Bahan Utama: 55% Linen, 45% Cotton; Pilihan Warna: Putih, Khaki, Terracotta; Harga Retail: Rp279.000.
+Daftar Produk Utama & Spesifikasi - Kode SKU NW-PT03: Nama Produk: Urban Tapered Chino Pants; Bahan Utama: Cotton Twill Stretch; Pilihan Warna: Hitam, Cream, Olive; Harga Retail: Rp329.000.
+Daftar Produk Utama & Spesifikasi - Kode SKU NW-JK04: Nama Produk: Weatherproof Windbreaker Jacket; Bahan Utama: Taslan Crinkle Water-Repellent; Pilihan Warna: Hitam, Abu-abu Muda, Biru Dongker; Harga Retail: Rp419.000.
+Daftar Produk Utama & Spesifikasi - Kode SKU NW-BG05: Nama Produk: Everyday Canvas Tote Bag; Bahan Utama: Kanvas Marsoto 14 oz + Resleting; Pilihan Warna: Natural Canvas, Hitam; Harga Retail: Rp119.000.
+2. Panduan Ukuran (Size Chart - dalam cm)
+Atasan (Kaos NW-TS01 & Kemeja NW-SH02):
+Atasan (Kaos NW-TS01 & Kemeja NW-SH02) - Ukuran S: Lebar Dada: 50 cm; Panjang Baju: 68 cm; Panjang Lengan: 22 cm.
+Atasan (Kaos NW-TS01 & Kemeja NW-SH02) - Ukuran M: Lebar Dada: 52 cm; Panjang Baju: 70 cm; Panjang Lengan: 23 cm.
+Atasan (Kaos NW-TS01 & Kemeja NW-SH02) - Ukuran L: Lebar Dada: 54 cm; Panjang Baju: 72 cm; Panjang Lengan: 24 cm.
+Atasan (Kaos NW-TS01 & Kemeja NW-SH02) - Ukuran XL: Lebar Dada: 57 cm; Panjang Baju: 74 cm; Panjang Lengan: 25 cm.
+Catatan: Toleransi ukuran jahitan ± 1–2 cm.
+Bawahan (Celana Chino NW-PT03):
+Bawahan (Celana Chino NW-PT03) - Ukuran 28: Lingkar Pinggang: 76 cm; Panjang Celana: 96 cm.
+Bawahan (Celana Chino NW-PT03) - Ukuran 30: Lingkar Pinggang: 81 cm; Panjang Celana: 98 cm.
+Bawahan (Celana Chino NW-PT03) - Ukuran 32: Lingkar Pinggang: 86 cm; Panjang Celana: 100 cm.
+Bawahan (Celana Chino NW-PT03) - Ukuran 34: Lingkar Pinggang: 91 cm; Panjang Celana: 102 cm.
+3. Kebijakan Garansi Produk (NUSAwear Quality Guarantee)
+NUSAwear memberikan Garansi Jahitan & Aksesoris selama 30 hari sejak tanggal pembelian untuk seluruh kategori pakaian dan tas.
+Cakupan Garansi (Gratis Perbaikan atau Ganti Baru):
+Jahitan terlepas atau benang robek bukan akibat tarikan paksa.
+Resleting (zipper) macet/rusak atau kancing lepas pada pemakaian normal.
+Sablon mengelupas dalam 3 kali pencucian pertama (dengan syarat mengikuti instruksi perawatan).
+Hal yang Membatalkan Garansi:
+Kerusakan akibat kesalahan pencucian (misalnya penggunaan pemutih pakaian, penyikatan kasar, atau pengeringan mesin suhu tinggi yang menyebabkan penyusutan).
+Noda luntur akibat dicampur dengan pakaian berwarna lain.
+Kerusakan akibat benda tajam, tersangkut, atau terbakar.
+Cara Klaim Garansi:
+Pelanggan cukup mengirimkan foto kerusakan bagian produk beserta bukti transaksi (invoice digital/struk) ke WhatsApp Customer Service di 0812-0000-9988.
