@@ -29,15 +29,20 @@ SKIP_PREFIX = ("PT NUSANTARA GAYA KREATIF", "Kode Dokumen:")
 STEP = re.compile(r"^(\d+)\.\s+(.*)$")
 
 def answer(records, question, n):
-    model_input = "Pertanyaan : "+question+"\n"
-    for score, r in query(records, question, n=n):
-        model_input=model_input+(f"{score:.3f}  {r['text']}")+"\n"
+    hits = query(records, question, n=n)
+    model_input = "Pertanyaan : " + question + "\n"
+    for score, r in hits:
+        model_input += f"{score:.3f}  {r['text']}\n"
     response = client.responses.create(
-                        model=ANSWER_MODEL,
-                        instructions=SYSTEM_PROMPT,
-                        input=model_input
-                )
-    return response.output_text
+        model=ANSWER_MODEL,
+        instructions=SYSTEM_PROMPT,
+        input=model_input,
+    )
+    sources = [
+        {"dokumen": r["metadata"]["dokumen"], "teks": r["text"]}
+        for _, r in hits
+    ]
+    return response.output_text, sources
     
 def is_section(line):
     if line.endswith(":") and len(line) <= 80:
@@ -140,16 +145,3 @@ def print_chunks(path="knowledge.txt"):
 
 if __name__ == "__main__":
     records = load_store()
-    # print_chunks()
-    for pertanyaan in [
-        "cuti tahunan saya berapa hari?",
-        "saya baru masuk, bisa cuti tidak?",
-        "sisa cuti tahun lalu bisa dipakai?",
-        "cuti 2 hari, ajukan kapan?",
-        "jam masuk hari pertama jam berapa?"
-    ]:
-    # answer(records, "jam kerja jam ber/apa?")
-        print(f"\n=== {pertanyaan}")
-        print(answer(records, pertanyaan, n=8))
-        for score, r in query(records, pertanyaan, n=8):
-            print(f"{score:.3f}  {r['text']}")
