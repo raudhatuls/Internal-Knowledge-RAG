@@ -2,6 +2,5 @@ internalknowledgeRAG/
 __pycache__/
 *.pyc
 .env
-knowledge.json
 docx_to_text.py
 body.json
