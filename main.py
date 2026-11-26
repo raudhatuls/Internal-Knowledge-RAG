@@ -21,6 +21,7 @@ SYSTEM_PROMPT = f"""
         Sebutkan nama dokumen sumber diakhir, namun jika jawaban tidak ada jangan menyebutkan sumber dokumen
         Salin angka, jam, menit dan batas waktu lain persis seperti di potongan. Jangan membulatkan atau memotong.
         Jika jawaban ada di salah satu potongan, jawab langsung. Jangan katakan tidak disebutkan.
+        Jangan tambah markdown
         """
         
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))

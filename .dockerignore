@@ -1,0 +1,6 @@
+.env
+venv/
+internalknowledgeRAG/
+__pycache__/
+*.pyc
+.git/

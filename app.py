@@ -1,10 +1,13 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field
 from main import load_store, answer
 import time
 from collections import defaultdict
-from fastapi import Request
+import logging
+
+logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s")
+log = logging.getLogger("rag")
 
 app = FastAPI(title="NUSAwear Knowledge Assistant")
 records = load_store()
@@ -32,9 +35,13 @@ def index():
 def ask(req: AskRequest, request: Request):
     ip = request.headers.get("x-forwarded-for", request.client.host).split(",")[0].strip()
     if not allowed(ip):
+        log.warning("Batas pertanyaan hari ini sudah tercapai. Coba lagi besok.")
         raise HTTPException(status_code=429, detail="Batas pertanyaan hari ini sudah tercapai. Coba lagi besok.")
     try:
+        start = time.time()
         text, sources = answer(records, req.question, n=5)
-    except Exception:
+        log.info("ask len=%d sources=%d ms=%.1f", len(req.question), len(sources), (time.time() - start) * 1000)
+    except Exception as e:
+        log.error("gagal memproses pertanyaan (len=%d): %s", len(req.question), type(e).__name__)
         raise HTTPException(status_code=500, detail="Gagal memproses pertanyaan. Coba lagi.")
     return {"answer": text, "sources": sources}
