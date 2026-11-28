@@ -1,0 +1,142 @@
+[
+  {
+    "id": "q01",
+    "type": "normal",
+    "question": "Berapa jam kerja reguler untuk HQ & Admin?",
+    "expected_answer": "Senin–Jumat, pukul 09.00–18.00 WIB, termasuk waktu istirahat pukul 12.00–13.00 WIB.",
+    "expected_source": "DOKUMEN 1: SOP ONBOARDING KARYAWAN BARU"
+  },
+  {
+    "id": "q02",
+    "type": "normal",
+    "question": "Berapa lama toleransi keterlambatan karyawan?",
+    "expected_answer": "Maksimal 15 menit, hingga pukul 09.15 WIB, dan jam pulang wajib diganti pada hari yang sama.",
+    "expected_source": "DOKUMEN 1: SOP ONBOARDING KARYAWAN BARU"
+  },
+  {
+    "id": "q03",
+    "type": "normal",
+    "question": "Bagaimana aturan absensi karyawan WFO?",
+    "expected_answer": "Karyawan WFO wajib menyalakan GPS dan terhubung ke jaringan Wi-Fi kantor NUSA-Corp-5G saat melakukan Clock-In dan Clock-Out melalui Talenta HRIS.",
+    "expected_source": "DOKUMEN 1: SOP ONBOARDING KARYAWAN BARU"
+  },
+  {
+    "id": "q04",
+    "type": "normal",
+    "question": "Jam berapa kredensial sementara dikirim pada hari pertama?",
+    "expected_answer": "Tim IT mengirimkan kredensial sementara ke email pribadi karyawan pada pukul 08.30 WIB.",
+    "expected_source": "DOKUMEN 1: SOP ONBOARDING KARYAWAN BARU"
+  },
+  {
+    "id": "q05",
+    "type": "normal",
+    "question": "Berapa hari karyawan tetap mendapatkan cuti tahunan setelah probation?",
+    "expected_answer": "12 hari cuti tahunan setelah melewati masa probation selama 3 bulan.",
+    "expected_source": "DOKUMEN 2: KEBIJAKAN CUTI & IZIN KARYAWAN"
+  },
+  {
+    "id": "q06",
+    "type": "normal",
+    "question": "Kapan cuti 1–2 hari harus diajukan?",
+    "expected_answer": "Minimal H-3 sebelum tanggal cuti.",
+    "expected_source": "DOKUMEN 2: KEBIJAKAN CUTI & IZIN KARYAWAN"
+  },
+  {
+    "id": "q07",
+    "type": "normal",
+    "question": "Apa aturan jika karyawan sakit 1 hari?",
+    "expected_answer": "Karyawan wajib menginformasikan kepada atasan langsung dan HR melalui Slack/WhatsApp maksimal pukul 09.30 WIB pada hari tersebut. Surat dokter tidak wajib.",
+    "expected_source": "DOKUMEN 2: KEBIJAKAN CUTI & IZIN KARYAWAN"
+  },
+  {
+    "id": "q08",
+    "type": "normal",
+    "question": "Apa syarat jika karyawan sakit 2 hari atau lebih?",
+    "expected_answer": "Wajib melampirkan Surat Keterangan Dokter yang sah, fisik atau telemedisin resmi seperti Halodoc/Alodokter, dan mengunggahnya ke Talenta HRIS paling lambat 1 hari setelah kembali bekerja. Jika tidak ada surat dokter, hari kedua dan seterusnya dipotong dari jatah cuti tahunan.",
+    "expected_source": "DOKUMEN 2: KEBIJAKAN CUTI & IZIN KARYAWAN"
+  },
+  {
+    "id": "q09",
+    "type": "normal",
+    "question": "Berapa hari maksimal cuti yang bisa di-carry over?",
+    "expected_answer": "Maksimal 4 hari ke tahun berikutnya.",
+    "expected_source": "DOKUMEN 2: KEBIJAKAN CUTI & IZIN KARYAWAN"
+  },
+  {
+    "id": "q10",
+    "type": "normal",
+    "question": "Jam berapa pesanan reguler yang lunas harus dikirim pada hari yang sama?",
+    "expected_answer": "Pesanan reguler dan kargo yang terkonfirmasi lunas sebelum pukul 15.00 WIB wajib dikirim pada hari yang sama.",
+    "expected_source": "DOKUMEN 3: SOP OPERASIONAL TOKO & E-COMMERCE"
+  },
+  {
+    "id": "q11",
+    "type": "normal",
+    "question": "Apa batas cut-off untuk pesanan Instant dan Same-Day?",
+    "expected_answer": "Pesanan Same-Day masuk sebelum pukul 14.00 WIB dan pesanan Instant masuk sebelum pukul 16.30 WIB untuk diproses pada hari yang sama.",
+    "expected_source": "DOKUMEN 3: SOP OPERASIONAL TOKO & E-COMMERCE"
+  },
+  {
+    "id": "q12",
+    "type": "normal",
+    "question": "Berapa lama pelanggan dapat mengajukan retur atau tukar ukuran?",
+    "expected_answer": "Maksimal 7 hari kalender sejak status paket diterima (Delivered).",
+    "expected_source": "DOKUMEN 3: SOP OPERASIONAL TOKO & E-COMMERCE"
+  },
+  {
+    "id": "q13",
+    "type": "normal",
+    "question": "Apa syarat video untuk pengajuan retur?",
+    "expected_answer": "Wajib menyertakan video unboxing tanpa jeda (uncut) dari awal paket masih tersegel.",
+    "expected_source": "DOKUMEN 3: SOP OPERASIONAL TOKO & E-COMMERCE"
+  },
+  {
+    "id": "q14",
+    "type": "normal",
+    "question": "Berapa harga Nusantara Essential Heavyweight Tee?",
+    "expected_answer": "Rp149.000.",
+    "expected_source": "DOKUMEN 4: PANDUAN PRODUK & KEBIJAKAN GARANSI (KATALOG 2026)"
+  },
+  {
+    "id": "q15",
+    "type": "normal",
+    "question": "Berapa ukuran lebar dada kaos ukuran L?",
+    "expected_answer": "54 cm.",
+    "expected_source": "DOKUMEN 4: PANDUAN PRODUK & KEBIJAKAN GARANSI (KATALOG 2026)"
+  },
+  {
+    "id": "q16",
+    "type": "normal",
+    "question": "Berapa lama garansi jahitan dan aksesoris NUSAwear?",
+    "expected_answer": "30 hari sejak tanggal pembelian untuk seluruh kategori pakaian dan tas.",
+    "expected_source": "DOKUMEN 4: PANDUAN PRODUK & KEBIJAKAN GARANSI (KATALOG 2026)"
+  },
+  {
+    "id": "q17",
+    "type": "normal",
+    "question": "Apa yang membatalkan garansi jika produk dicuci?",
+    "expected_answer": "Kesalahan pencucian, misalnya penggunaan pemutih pakaian, penyikatan kasar, atau pengeringan mesin suhu tinggi yang menyebabkan penyusutan.",
+    "expected_source": "DOKUMEN 4: PANDUAN PRODUK & KEBIJAKAN GARANSI (KATALOG 2026)"
+  },
+  {
+    "id": "q18",
+    "type": "ambiguous",
+    "question": "Kalau tidak bisa datang karena sakit, apa aturannya?",
+    "expected_answer": "Aturan berbeda berdasarkan durasi sakit: sakit 1 hari wajib menginformasikan atasan langsung dan HR melalui Slack/WhatsApp maksimal pukul 09.30 WIB dan tidak wajib surat dokter. Sakit 2 hari atau lebih wajib melampirkan Surat Keterangan Dokter yang sah dan mengunggahnya ke Talenta HRIS paling lambat 1 hari setelah kembali bekerja.",
+    "expected_source": "DOKUMEN 2: KEBIJAKAN CUTI & IZIN KARYAWAN"
+  },
+  {
+    "id": "q19",
+    "type": "not_found",
+    "question": "Apakah perusahaan menyediakan fasilitas mobil pribadi untuk karyawan?",
+    "expected_answer": "Informasi mengenai fasilitas mobil pribadi tidak tersedia pada informasi yang diberikan, jadi belum bisa dipastikan apakah perusahaan menyediakannya.",
+    "expected_source": null
+  },
+  {
+    "id": "q20",
+    "type": "multi_rule",
+    "question": "Apa perbedaan aturan cuti lebih dari 3 hari dan sakit 2 hari atau lebih?",
+    "expected_answer": "Cuti lebih dari 3 hari berturut-turut harus diajukan minimal H-7 sebelum tanggal cuti melalui Talenta HRIS setelah berkoordinasi dengan atasan langsung. Sakit 2 hari atau lebih wajib melampirkan Surat Keterangan Dokter yang sah dan mengunggahnya ke Talenta HRIS paling lambat 1 hari setelah kembali bekerja.",
+    "expected_source": "DOKUMEN 2: KEBIJAKAN CUTI & IZIN KARYAWAN"
+  }
+]

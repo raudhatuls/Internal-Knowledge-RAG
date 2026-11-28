@@ -1,7 +1,7 @@
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field
-from main import load_store, answer
+from main import answer
 import time
 from collections import defaultdict
 import logging
@@ -10,7 +10,6 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s")
 log = logging.getLogger("rag")
 
 app = FastAPI(title="NUSAwear Knowledge Assistant")
-records = load_store()
 LIMIT = 20          # pertanyaan per IP
 WINDOW = 24 * 3600  # per 24 jam
 hits = defaultdict(list)
@@ -39,7 +38,7 @@ def ask(req: AskRequest, request: Request):
         raise HTTPException(status_code=429, detail="Batas pertanyaan hari ini sudah tercapai. Coba lagi besok.")
     try:
         start = time.time()
-        text, sources = answer(records, req.question, n=5)
+        text, sources = answer(req.question, n=5)
         log.info("ask len=%d sources=%d ms=%.1f", len(req.question), len(sources), (time.time() - start) * 1000)
     except Exception as e:
         log.error("gagal memproses pertanyaan (len=%d): %s", len(req.question), type(e).__name__)

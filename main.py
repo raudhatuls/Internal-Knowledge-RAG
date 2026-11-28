@@ -4,24 +4,28 @@ load_dotenv()
 import os
 import json
 import re
-import numpy as np
 from openai import OpenAI
+import psycopg
+from pgvector.psycopg import register_vector
+from pgvector import Vector
+
 
 EMBED_MODEL = "text-embedding-3-small"
 ANSWER_MODEL = "gpt-6-luna"
+DATABASE_URL = os.getenv("DATABASE_URL")
 STORE = "knowledge.json"
 SYSTEM_PROMPT = f"""
-        Jawab pertanyaan dengan ramah dan profesional.
-        Jika tidak ada jawaban jawab tidak tahu secara profesional.
-        Jangan mengarang informasi apapun.
-        Jika ada singkatan yang umum digunakan, lihat kecocokan di chunk.
-        Jika jawaban bisa lebih dari satu minta klarifikasi ke pengguna aturan mana yang dimaksud sebelum memberikan jawaban.
-        Kelaskan dua aturan berbeda secara terpisah.
-        Jika pertanyaan menyebut hal yang tidak secara eksplisit ada di potongan, jangan menyimpulkan dari data terkait. Katakan tidak ada, lalu sebutkan informasi terdekat yang tersedia, misalnya jam kerja reguler.
-        Sebutkan nama dokumen sumber diakhir, namun jika jawaban tidak ada jangan menyebutkan sumber dokumen
-        Salin angka, jam, menit dan batas waktu lain persis seperti di potongan. Jangan membulatkan atau memotong.
-        Jika jawaban ada di salah satu potongan, jawab langsung. Jangan katakan tidak disebutkan.
-        Jangan tambah markdown
+        Answer the question in a friendly and professional manner.
+            If there is no answer, state that you do not know professionally.
+            Do not fabricate any information.
+            If commonly used abbreviations appear, check for matches in the chunks.
+            If the question is ambiguous and multiple relevant rules apply, ask for clarification before answering.
+            If the relevant rules can be distinguished based on conditions, explain each rule separately.
+            If the question mentions something not explicitly stated in the chunks, do not infer it from related data. State that it is not available, then mention the closest available information, such as regular working hours.
+            State the source document name at the end, but if no answer is found, do not mention any source document.
+            Copy numbers, hours, minutes, and other deadlines exactly as written in the chunks. Do not round or truncate them.
+            If the answer exists in any of the chunks, answer directly. Do not state that it is not mentioned.
+            Do not add Markdown.
         """
         
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
@@ -29,20 +33,28 @@ client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 SKIP_PREFIX = ("PT NUSANTARA GAYA KREATIF", "Kode Dokumen:")
 STEP = re.compile(r"^(\d+)\.\s+(.*)$")
 
-def answer(records, question, n):
-    hits = query(records, question, n=n)
+def answer(question, n=5):
+    hits = query(question, n=n)
+
     model_input = "Pertanyaan : " + question + "\n"
+
     for score, r in hits:
         model_input += f"{score:.3f}  {r['text']}\n"
+
     response = client.responses.create(
         model=ANSWER_MODEL,
         instructions=SYSTEM_PROMPT,
         input=model_input,
     )
+
     sources = [
-        {"dokumen": r["metadata"]["dokumen"], "teks": r["text"]}
+        {
+            "dokumen": r["metadata"]["dokumen"],
+            "teks": r["text"],
+        }
         for _, r in hits
     ]
+
     return response.output_text, sources
     
 def is_section(line):
@@ -91,49 +103,69 @@ def embed(texts):
     return [d.embedding for d in resp.data]
 
 
-def build_store():
-    with open("knowledge.txt", "r", encoding="utf-8") as f:
-        items = chunk_with_context(f.read())
-    vectors = embed([it["text"] for it in items])
-    records = [
-        {
-            "id": f"c{i}",
-            "text": it["text"],
-            "vector": v,
-            "metadata": {
-                "sumber": "SOP_NUSAwear.docx",
-                "dokumen": it["dokumen"],
-                "langkah": it["langkah"],
-            },
+def query(question, n=3, where=None):
+    q = Vector(embed([question])[0])
+
+    sql = """
+        SELECT
+            id,
+            content,
+            source,
+            document_name,
+            step,
+            1 - (embedding <=> %s) AS score
+        FROM documents
+    """
+
+    params = [q]
+
+    if where:
+        column_mapping = {
+            "sumber": "source",
+            "dokumen": "document_name",
+            "langkah": "step",
         }
-        for i, (it, v) in enumerate(zip(items, vectors), 1)
+
+        filters = []
+
+        for key, value in where.items():
+            column = column_mapping.get(key)
+
+            if column is None:
+                raise ValueError(f"Filter tidak dikenal: {key}")
+
+            filters.append(f"{column} = %s")
+            params.append(value)
+
+        sql += " WHERE " + " AND ".join(filters)
+
+    sql += """
+        ORDER BY embedding <=> %s
+        LIMIT %s
+    """
+
+    params.extend([q, n])
+
+    with psycopg.connect(DATABASE_URL) as conn:
+        register_vector(conn)
+
+        rows = conn.execute(sql, params).fetchall()
+
+    return [
+        (
+            float(row[5]),
+            {
+                "id": row[0],
+                "text": row[1],
+                "metadata": {
+                    "sumber": row[2],
+                    "dokumen": row[3],
+                    "langkah": row[4],
+                },
+            },
+        )
+        for row in rows
     ]
-    with open(STORE, "w", encoding="utf-8") as f:
-        json.dump(records, f, ensure_ascii=False)
-    print("store dibuat:", len(records), "chunk")
-    return records
-
-
-def load_store():
-    if not os.path.exists(STORE):
-        return build_store()
-    with open(STORE, "r", encoding="utf-8") as f:
-        return json.load(f)
-
-
-def query(records, question, n=2, where=None):
-    q = np.array(embed([question])[0])
-    candidates = [
-        r for r in records
-        if where is None or all(r["metadata"].get(k) == v for k, v in where.items())
-    ]
-    scored = []
-    for r in candidates:
-        v = np.array(r["vector"])
-        score = np.dot(v, q) / (np.linalg.norm(v) * np.linalg.norm(q))
-        scored.append((score, r))
-    scored.sort(key=lambda x: x[0], reverse=True)
-    return scored[:n]
 
 
 def print_chunks(path="knowledge.txt"):
@@ -144,5 +176,3 @@ def print_chunks(path="knowledge.txt"):
         print(f"[{i:02d}]{langkah} {it['text']}")
     print(f"\nTotal chunk: {len(items)}")
 
-if __name__ == "__main__":
-    records = load_store()

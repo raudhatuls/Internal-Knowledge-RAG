@@ -1,0 +1,29 @@
+
+services:
+  app:
+    build: .
+    container_name: nusawear-rag
+    ports:
+      - "8000:8000"
+    environment:
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+      DATABASE_URL: postgresql://rag_user:rag_password@db:5432/rag_db
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+
+  db:
+    image: pgvector/pgvector:pg16
+    container_name: rag-postgres
+    environment:
+      POSTGRES_DB: rag_db
+      POSTGRES_USER: rag_user
+      POSTGRES_PASSWORD: rag_password
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
